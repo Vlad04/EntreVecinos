@@ -16,35 +16,154 @@
 }
 
 .demo-oracle-icon {
-  width:137px;
-  height:18px;
-  content:url("images/oracle_logo.svg")
+  width: 90px;
+  height: auto;
+  display: block;
 }
 
 html:not([dir="rtl"]) .demo-oracle-icon {
-  padding-right:4px
+  padding-right: 4px
 }
 
 html[dir="rtl"] .demo-oracle-icon {
-  padding-left:4px
+  padding-left: 4px
 }
 
 .demo-oracle-icon:before {
-  display:inline
+  display: inline
 }
 
 .demo-appheader-avatar {
-  width:24px;
-  height:24px
+  width: 24px;
+  height: 24px
 }
 
 .demo-appheader-avatar:before {
-  content:url("images/avatar_24px.png")
+  content: url("images/avatar_24px.png")
 }
-@media (-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 144dpi), (min-resolution: 1.5dppx) {
+
+@media (-webkit-min-device-pixel-ratio: 1.5),
+(min-resolution: 144dpi),
+(min-resolution: 1.5dppx) {
   .demo-appheader-avatar:before {
-      content:url("images/avatar_24px_2x.png");
-      -webkit-transform:translate(-25%, -25%) scale(0.5);
-      transform:translate(-25%, -25%) scale(0.5)
+    content: url("images/avatar_24px_2x.png");
+    -webkit-transform: translate(-25%, -25%) scale(0.5);
+    transform: translate(-25%, -25%) scale(0.5)
   }
+}
+
+.pagos-filtros oj-select-single,
+.pagos-filtros oj-input-text {
+  --oj-text-field-height: 44px;
+  text-align: right !important;
+}
+
+
+.pagos-title {
+  margin: 0;
+  font-size: 34px;
+  font-weight: 400;
+  color: #111827;
+}
+
+/* Controles */
+.pagos-control {
+  min-width: 160px;
+}
+
+.pagos-search {
+  min-width: 320px;
+}
+
+/* Tarjeta */
+.pagos-card {
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 1px 2px rgba(16, 24, 40, .06), 0 1px 3px rgba(16, 24, 40, .10);
+  border: 1px solid rgba(16, 24, 40, .08);
+  overflow: hidden;
+}
+
+/* Header de la tarjeta */
+.pagos-card-header {
+  padding: 16px;
+  border-bottom: 1px solid rgba(16, 24, 40, .08);
+}
+
+/* Cuerpo */
+.pagos-card-body {
+  padding: 0;
+}
+
+/* Tabla */
+.pagos-table {
+  width: 100%;
+}
+
+.pagos-card-body .oj-table {
+  border: none;
+}
+
+.pagos-card .oj-table-header {
+  background-color: #f3f4f6;
+}
+
+.pagos-card .oj-table-header-cell {
+  background-color: #f3f4f6 !important;
+  color: #6b7280;
+  font-weight: 500;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.pagos-card .oj-table-header-cell:not(:last-child) {
+  border-right: 1px solid #e5e7eb;
+}
+
+.nueva_casa_button {
+  background-color: #4F7EDC;
+  border-color: #4F7EDC;
+  color: white;
+  font-weight: 300;
+  border-radius: 8px;
+}
+
+.nueva_casa_button .oj-button-button {
+  background-color: #4F7EDC !important;
+  border-color: #4F7EDC !important;
+  border-radius: 10px !important;
+  padding: 10px 18px !important;
+  color: #ffffff !important;
+  font-weight: 500 !important;
+}
+
+.nueva_casa_button .oj-button-label {
+  color: #ffffff !important;
+  font-weight: 500 !important;
+}
+
+.nueva_casa_button .oj-button-icon,
+.nueva_casa_button .oj-ux-ico-plus {
+  color: #ffffff !important;
+}
+
+.nueva_casa_button .oj-button-button:hover {
+  filter: brightness(0.95);
+}
+
+.nueva_casa_button .oj-button-icon {
+  font-size: 20px;   /* ajusta tamaño del icon font */
+  line-height: 1;
+}
+#search_text .oj-text-field-clear-icon {
+  transform: scale(0.65);
+  opacity: 0.75;
+}
+
+.nueva_casa_button .oj-button-icon,
+.nueva_casa_button .oj-icon {
+  font-size: 20px !important;
+  width: 20px !important;
+  height: 20px !important;
+  display: inline-block !important;
+  margin-right: 8px;
 }

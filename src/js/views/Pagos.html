@@ -1,0 +1,65 @@
+<div class="pagos-filtros" style="gap: 12px; width: 100%; text-align: right !important;">
+  <div class="oj-hybrid-padding">
+    <oj-select-single class="oj-form-control-max-width-sm" value="{{filtroEstatus}}" data="[[estatusDP]]" placeholder="Estatus"></oj-select-single>
+    <oj-select-single class="oj-form-control-max-width-sm" value="{{filtroPeriodo}}" data="[[periodosDP]]" placeholder="Periodo"></oj-select-single>
+
+    <oj-input-text
+      id="search_text"
+      on-raw-value-changed="[[handleValueChanged]]"
+      class="oj-form-control-max-width-md"
+      value="{{textoBusqueda}}"
+      clear-icon="always"
+      placeholder="Buscar...">
+      <div slot="start" class="oj-text-field-start-end-icon oj-ux-ico-search" role="img" title="Search"></div>
+    </oj-input-text>
+  </div>
+</div>
+
+<div class="oj-flex-item" style="padding-bottom: 1%;">
+  <h1 class="pagos-title">Pagos</h1>
+</div>
+
+<div class="pagos-card">
+  <div class="pagos-card-header">
+    <oj-button class="nueva_casa_button" on-oj-action="[[onNuevaCasa]]" chroming="solid">
+      <span slot="startIcon" class="oj-ux-icon oj-ux-ico-house"></span>
+      Nueva Casa
+    </oj-button>
+  </div>
+
+  <div class="pagos-card-body">
+    <oj-table id="pagosTable"
+      selection-mode="[[selectedSelectionMode]]"
+      data="[[pagosDP]]"
+      columns="[[columns]]"
+      display="grid"
+      class="pagos-table">
+
+      <template slot="estadoTemplate" data-oj-as="cell">
+        <oj-select-single
+          class="oj-form-control-max-width-xs"
+          data="[[estatusCeldaDP]]"
+          value="{{cell.item.data.estado}}">
+        </oj-select-single>
+      </template>
+
+      <template slot="metodoTemplate" data-oj-as="cell">
+        <oj-select-single
+          class="oj-form-control-max-width-xs"
+          data="[[metodoCeldaDP]]"
+          value="{{cell.item.data.metodo}}">
+        </oj-select-single>
+      </template>
+
+    </oj-table>
+  </div>
+</div>
+
+<oj-dialog id="modal_nueva_casa" dialog-title="Nueva Casa" aria-describedby="desc">
+  <div slot="body">
+    <p id="desc"></p>
+  </div>
+  <div slot="footer">
+    <oj-button id="okButton" on-oj-action="[[close_nueva_casa]]">OK</oj-button>
+  </div>
+</oj-dialog>
